@@ -18,9 +18,6 @@ class RawMailable extends Mailable
         $this->content = $content;
     }
 
-    /**
-     * Get the message content definition.
-     */
     public function content(): Content
     {
         return new Content(

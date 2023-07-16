@@ -1,1 +1,1 @@
-{{ nl2br(e($content)) }}
+{{ nl2br($content) }}
