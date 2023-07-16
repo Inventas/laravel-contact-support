@@ -19,7 +19,7 @@ class ContactSupportServiceProvider extends PackageServiceProvider
             ->name('laravel-contact-support')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel_contact_support_table');
+            ->hasMigration('create_contact_support_table');
     }
 
     public function packageRegistered()
