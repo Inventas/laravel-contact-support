@@ -2,10 +2,10 @@
 
 namespace Inventas\ContactSupport;
 
+use Inventas\ContactSupport\Commands\ContactSupportCommand;
 use Inventas\ContactSupport\Providers\EventServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Inventas\ContactSupport\Commands\ContactSupportCommand;
 
 class ContactSupportServiceProvider extends PackageServiceProvider
 {

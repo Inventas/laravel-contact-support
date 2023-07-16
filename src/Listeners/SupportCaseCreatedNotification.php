@@ -7,7 +7,6 @@ use Inventas\ContactSupport\Events\SupportCaseCreated;
 
 class SupportCaseCreatedNotification implements ShouldQueue
 {
-
     /**
      * Create the event listener.
      */
@@ -22,9 +21,7 @@ class SupportCaseCreatedNotification implements ShouldQueue
     public function handle(SupportCaseCreated $event): void
     {
 
-
-
-//        $event->supportCase
+        //        $event->supportCase
     }
 
     /**
@@ -34,5 +31,4 @@ class SupportCaseCreatedNotification implements ShouldQueue
     {
         return config('contact-support.should_queue_mails');
     }
-
 }

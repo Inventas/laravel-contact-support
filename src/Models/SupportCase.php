@@ -25,7 +25,7 @@ class SupportCase extends Model
         return SupportCaseFactory::new();
     }
 
-    protected $guarded = ["id"];
+    protected $guarded = ['id'];
 
     public function scopeClosed($query)
     {

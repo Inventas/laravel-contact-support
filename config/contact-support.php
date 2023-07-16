@@ -8,9 +8,9 @@ return [
     'support_case_types' => [
         'default' => [
             'receiver' => [
-                'info@example.org'
-            ]
-        ]
-    ]
+                'info@example.org',
+            ],
+        ],
+    ],
 
 ];

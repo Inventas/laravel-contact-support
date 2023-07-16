@@ -16,8 +16,6 @@ class SupportCaseCreated
      */
     public function __construct(
         public SupportCase $supportCase,
-    ) {}
-
-
-
+    ) {
+    }
 }
