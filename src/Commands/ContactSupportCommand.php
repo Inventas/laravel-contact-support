@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Inventas\ContactSupport\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ContactSupportCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-contact-support';
 
     public $description = 'My command';
 

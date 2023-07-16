@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "inventas/laravel-contact-support",
+    "description": "Save website support cases and send them to team",
     "keywords": [
-        ":vendor_name",
+        "Inventas",
         "laravel",
-        ":package_slug"
+        "laravel-contact-support"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/inventas/laravel-contact-support",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Lennart Fischer",
+            "email": "github@lambdadigamma.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Inventas\\ContactSupport\\": "src/",
+            "Inventas\\ContactSupport\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "Inventas\\ContactSupport\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Inventas\\ContactSupport\\ContactSupportServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "ContactSupport": "Inventas\\ContactSupport\\Facades\\ContactSupport"
             }
         }
     },
