@@ -1,1 +1,1 @@
-{!! $content !!}
+{{ nl2br(e($content)) }}

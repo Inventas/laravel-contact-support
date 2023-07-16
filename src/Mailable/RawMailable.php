@@ -5,6 +5,7 @@ namespace Inventas\ContactSupport\Mailable;
 use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
 
 class RawMailable extends Mailable
@@ -19,12 +20,15 @@ class RawMailable extends Mailable
     }
 
     /**
-     * Build the message.
+     * Get the message content definition.
      *
-     * @throws Exception
+     * @return Content
      */
-    public function build()
+    public function content(): Content
     {
-        $this->view('contact-support::emails.raw');
+        return new Content(
+            text: 'contact-support::emails.raw'
+        );
     }
+
 }
