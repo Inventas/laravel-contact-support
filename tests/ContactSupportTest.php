@@ -47,3 +47,67 @@ it('can be scoped to open support cases', function () {
         ->and(SupportCase::closed()->count())->toBe(3);
 
 });
+
+it('returns the correct subject', function () {
+
+    $supportCase = SupportCase::factory()->create([
+        'type' => 'default',
+        'name' => 'John Doe',
+    ]);
+
+    expect($supportCase->getSubject())->toBe('(#1) Support case:  John Doe');
+
+});
+
+it('returns the correct content', function () {
+
+    $supportCase = SupportCase::factory()->create([
+        'type' => 'default',
+        'name' => 'John Doe',
+        'email' => 'john.doe@example.org'
+    ]);
+
+    $content = $supportCase->getRawContent();
+
+    $expected = <<<EOT
+ID: #1
+Channel: Default
+Name: John Doe
+Email: john.doe@example.org
+EOT;
+
+    expect($content)->toBe($expected);
+
+});
+
+it('returns the correct content (sales)', function () {
+
+    $supportCase = SupportCase::factory()->create([
+        'type' => 'sales',
+        'name' => 'John Doe',
+        'email' => 'john.doe@example.org',
+        'extras' => [
+            'company' => 'Inventas GmbH',
+            'number_of_customers' => 1000,
+        ],
+        'message' => "Hello world\nThis is some multiline text",
+    ]);
+
+    $content = $supportCase->getRawContent();
+
+    $expected = <<<EOT
+ID: #1
+Channel: Sales
+Name: John Doe
+Email: john.doe@example.org
+Company: Inventas GmbH
+Number of customers: 1000
+
+
+Hello world
+This is some multiline text
+EOT;
+
+    expect($content)->toBe($expected);
+
+});

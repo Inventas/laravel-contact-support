@@ -12,7 +12,7 @@ class SupportCaseFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->sentence(3),
+            'name' => $this->faker->name(),
             'email' => $this->faker->safeEmail(),
         ];
     }
