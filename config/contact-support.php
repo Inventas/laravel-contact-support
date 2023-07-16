@@ -13,16 +13,16 @@ return [
             'name' => 'Default',
             'subject_prefix' => 'Support case: ',
             'receiver' => [
-                'info@example.org'
-            ]
+                'info@example.org',
+            ],
         ],
         'sales' => [
             'name' => 'Sales',
             'subject_prefix' => 'Sales inquiry: ',
             'receiver' => [
-                'info@example.org'
-            ]
+                'info@example.org',
+            ],
         ],
-    ]
+    ],
 
 ];

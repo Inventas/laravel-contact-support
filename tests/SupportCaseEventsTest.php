@@ -15,13 +15,13 @@ test('creation triggers SupportCaseCreated event', function () {
 
     $supportCase = SupportCase::create([
         'name' => 'Lennart Fischer',
-        'email' => 'lennart.fischer@example.org'
+        'email' => 'lennart.fischer@example.org',
     ]);
 
     Event::assertDispatched(SupportCaseCreated::class);
 
-//    Mail::assertSent(RawMailable::class);
-//    Mail::assertSent(RawMailable::class);
+    //    Mail::assertSent(RawMailable::class);
+    //    Mail::assertSent(RawMailable::class);
 
 });
 
@@ -31,7 +31,7 @@ test('quiet creation does not trigger event', function () {
 
     $supportCaseSilent = SupportCase::make([
         'name' => 'Lennart Fischer',
-        'email' => 'lennart.fischer@example.org'
+        'email' => 'lennart.fischer@example.org',
     ])->saveQuietly();
 
     Event::assertNotDispatched(SupportCaseCreated::class);

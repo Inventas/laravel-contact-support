@@ -4,8 +4,8 @@ namespace Inventas\ContactSupport\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Mail;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Inventas\ContactSupport\ContactSupportServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
@@ -33,8 +33,6 @@ class TestCase extends Orchestra
 
         $migration = include __DIR__.'/../database/migrations/create_contact_support_table.php.stub';
         $migration->up();
-
-
 
     }
 }

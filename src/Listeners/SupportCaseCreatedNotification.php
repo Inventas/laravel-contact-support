@@ -10,7 +10,6 @@ use Inventas\ContactSupport\SupportCaseTypeResolver;
 
 class SupportCaseCreatedNotification implements ShouldQueue
 {
-
     /**
      * Create the event listener.
      */
@@ -42,12 +41,12 @@ class SupportCaseCreatedNotification implements ShouldQueue
             Mail::to($receivers)->send($mailable);
         }
 
-//        Mail::raw($event->supportCase->getRawContent(), function (Message $message) use ($config, $supportCase) {
-//            $message->from("hello@24doors.app", "24doors Support System");
-//            $message->to($config['receiver']);
-//            $message->subject($supportCase->getSubject());
-//            $message->replyTo($supportCase->getReplyTo());
-//        });
+        //        Mail::raw($event->supportCase->getRawContent(), function (Message $message) use ($config, $supportCase) {
+        //            $message->from("hello@24doors.app", "24doors Support System");
+        //            $message->to($config['receiver']);
+        //            $message->subject($supportCase->getSubject());
+        //            $message->replyTo($supportCase->getReplyTo());
+        //        });
 
     }
 
@@ -58,5 +57,4 @@ class SupportCaseCreatedNotification implements ShouldQueue
     {
         return config('contact-support.should_queue_mails');
     }
-
 }

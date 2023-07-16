@@ -2,7 +2,6 @@
 
 namespace Inventas\ContactSupport;
 
-use Inventas\ContactSupport\Commands\ContactSupportCommand;
 use Inventas\ContactSupport\Providers\EventServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -29,5 +28,4 @@ class ContactSupportServiceProvider extends PackageServiceProvider
 
         $this->app->register(EventServiceProvider::class);
     }
-
 }

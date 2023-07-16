@@ -64,12 +64,12 @@ it('returns the correct content', function () {
     $supportCase = SupportCase::factory()->create([
         'type' => 'default',
         'name' => 'John Doe',
-        'email' => 'john.doe@example.org'
+        'email' => 'john.doe@example.org',
     ]);
 
     $content = $supportCase->getRawContent();
 
-    $expected = <<<EOT
+    $expected = <<<'EOT'
 ID: #1
 Channel: Default
 Name: John Doe
@@ -95,7 +95,7 @@ it('returns the correct content (sales)', function () {
 
     $content = $supportCase->getRawContent();
 
-    $expected = <<<EOT
+    $expected = <<<'EOT'
 ID: #1
 Channel: Sales
 Name: John Doe
