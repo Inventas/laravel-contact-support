@@ -2,7 +2,6 @@
 
 namespace Inventas\ContactSupport\Mailable;
 
-use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
@@ -21,8 +20,6 @@ class RawMailable extends Mailable
 
     /**
      * Get the message content definition.
-     *
-     * @return Content
      */
     public function content(): Content
     {
@@ -30,5 +27,4 @@ class RawMailable extends Mailable
             text: 'contact-support::emails.raw'
         );
     }
-
 }
