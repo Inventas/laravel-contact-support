@@ -29,5 +29,4 @@ class ContactSupportServiceProvider extends PackageServiceProvider
 
         $this->app->register(EventServiceProvider::class);
     }
-
 }
