@@ -3,7 +3,7 @@
 // config for Inventas/ContactSupport
 return [
 
-    'should_queue_mails' => false,
+    'should_queue_mails' => true,
 
     'from_address' => 'info@example.org',
     'from_name' => 'Support System',

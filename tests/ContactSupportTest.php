@@ -1,8 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Queue;
 use Inventas\ContactSupport\Models\SupportCase;
 
 it('can be created', function () {
+
+    Mail::fake();
+    Event::fake();
+    Queue::fake();
 
     $supportCase = SupportCase::create([
         'name' => 'John Doe',
@@ -16,6 +23,10 @@ it('can be created', function () {
 
 it('can be created with factory', function () {
 
+    Mail::fake();
+    Event::fake();
+    Queue::fake();
+
     $supportCase = SupportCase::factory()->create();
 
     expect($supportCase)->name->not->toBeNull()
@@ -24,6 +35,10 @@ it('can be created with factory', function () {
 });
 
 it('can have extra properties', function () {
+
+    Mail::fake();
+    Event::fake();
+    Queue::fake();
 
     $supportCase = SupportCase::create([
         'name' => 'John Doe',
@@ -40,6 +55,10 @@ it('can have extra properties', function () {
 
 it('can be scoped to open support cases', function () {
 
+    Mail::fake();
+    Event::fake();
+    Queue::fake();
+
     $openCases = SupportCase::factory()->open()->count(2)->create();
     $closedCases = SupportCase::factory()->closed()->count(3)->create();
 
@@ -49,6 +68,10 @@ it('can be scoped to open support cases', function () {
 });
 
 it('returns the correct subject', function () {
+
+    Mail::fake();
+    Event::fake();
+    Queue::fake();
 
     $supportCase = SupportCase::factory()->create([
         'type' => 'default',
@@ -60,6 +83,10 @@ it('returns the correct subject', function () {
 });
 
 it('returns the correct content', function () {
+
+    Mail::fake();
+    Event::fake();
+    Queue::fake();
 
     $supportCase = SupportCase::factory()->create([
         'type' => 'default',
@@ -81,6 +108,10 @@ EOT;
 });
 
 it('returns the correct content (sales)', function () {
+
+    Mail::fake();
+    Event::fake();
+    Queue::fake();
 
     $supportCase = SupportCase::factory()->create([
         'type' => 'sales',
