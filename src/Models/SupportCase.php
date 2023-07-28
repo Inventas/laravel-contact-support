@@ -63,15 +63,22 @@ class SupportCase extends Model
         $mailContent .= 'Email: '.$this->email."\n";
 
         if ($this->phone) {
-            $mailContent .= 'Phone: '.$this->phone."\n";
+            $mailContent .= 'Phone: ' . $this->phone."\n";
         }
 
         if ($this->extras && array_key_exists('company', $this->extras)) {
-            $mailContent .= 'Company: '.$this->extras['company']."\n";
+            $mailContent .= 'Company: ' . $this->extras['company'] . "\n";
         }
 
         if ($this->extras && array_key_exists('number_of_customers', $this->extras)) {
-            $mailContent .= 'Number of customers: '.$this->extras['number_of_customers']."\n";
+            $mailContent .= 'Number of customers: ' . $this->extras['number_of_customers'] . "\n";
+        }
+
+        if ($this->extras && array_key_exists('manufacturer', $this->extras)) {
+            $mailContent .= 'Manufacturer: ' . $this->extras['manufacturer']."\n";
+        }
+        if ($this->extras && array_key_exists('model', $this->extras)) {
+            $mailContent .= 'Model: ' . $this->extras['model']."\n";
         }
 
         $mailContent .= "\n\n";

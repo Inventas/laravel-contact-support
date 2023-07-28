@@ -142,3 +142,39 @@ EOT;
     expect($content)->toBe($expected);
 
 });
+
+it('returns the correct content (app)', function () {
+
+    Mail::fake();
+    Event::fake();
+    Queue::fake();
+
+    $supportCase = SupportCase::factory()->create([
+        'type' => 'default',
+        'name' => 'John Doe',
+        'email' => 'john.doe@example.org',
+        'extras' => [
+            'manufacturer' => 'Apple',
+            'model' => 'iPhone 14 Pro',
+        ],
+        'message' => "Hello world\nThis is some multiline text",
+    ]);
+
+    $content = $supportCase->getRawContent();
+
+    $expected = <<<'EOT'
+ID: #1
+Channel: Default
+Name: John Doe
+Email: john.doe@example.org
+Manufacturer: Apple
+Model: iPhone 14 Pro
+
+
+Hello world
+This is some multiline text
+EOT;
+
+    expect($content)->toBe($expected);
+
+});
