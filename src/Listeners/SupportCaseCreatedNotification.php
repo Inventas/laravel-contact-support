@@ -30,13 +30,5 @@ class SupportCaseCreatedNotification
         } else {
             Mail::to($receivers)->send($mailable);
         }
-
-        //        Mail::raw($event->supportCase->getRawContent(), function (Message $message) use ($config, $supportCase) {
-        //            $message->from("hello@24doors.app", "24doors Support System");
-        //            $message->to($config['receiver']);
-        //            $message->subject($supportCase->getSubject());
-        //            $message->replyTo($supportCase->getReplyTo());
-        //        });
-
     }
 }

@@ -8,6 +8,15 @@ use Inventas\ContactSupport\Database\Factories\SupportCaseFactory;
 use Inventas\ContactSupport\Events\SupportCaseCreated;
 use Inventas\ContactSupport\SupportCaseTypeResolver;
 
+/**
+ * @property int $id
+ * @property string $type
+ * @property string $name
+ * @property string $email
+ * @property string|null $phone
+ * @property string|null $message
+ * @property array<string, mixed>|null $extras
+ */
 class SupportCase extends Model
 {
     use HasFactory;
